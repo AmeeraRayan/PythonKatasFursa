@@ -1,5 +1,5 @@
 import unittest
-from katas.list_diff import find_difference  # Adjust this path if needed
+from katas.list_diff import find_difference
 
 class TestFindDifference(unittest.TestCase):
     def test_normal_case(self):
