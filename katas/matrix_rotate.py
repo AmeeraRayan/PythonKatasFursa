@@ -5,7 +5,16 @@ def rotate_matrix(matrix):
     Args:
         matrix: the 2D square matrix to rotate
     """
-    pass
+    n = len(matrix)
+
+    # Step 1: Transpose
+    for i in range(n):
+        for j in range(i, n):    # so first we need to do transpose and then reverse it and by doing that will rotate the matrix 90-degree
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+    # Step 2: Reverse each row
+    for row in matrix:
+        row.reverse()
 
 
 def print_matrix(matrix):
