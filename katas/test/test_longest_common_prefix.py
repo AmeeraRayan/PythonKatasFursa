@@ -1,5 +1,5 @@
 import unittest
-from katas.longest_common_prefix import longest_common_prefix  # Adjust path if needed
+from katas.longest_common_prefix import longest_common_prefix
 
 class TestLongestCommonPrefix(unittest.TestCase):
     def test_example1(self):
