@@ -18,7 +18,22 @@ def compare_versions(version1, version2):
          0 if version1 = version2
          1 if version1 > version2
     """
-    return 0
+    v1_parts = [int(part) for part in version1.split('.')]
+    v2_parts = [int(part) for part in version2.split('.')]
+
+    # Make both lists the same length by padding with 0s
+    max_length = max(len(v1_parts), len(v2_parts))
+    v1_parts.extend([0] * (max_length - len(v1_parts)))
+    v2_parts.extend([0] * (max_length - len(v2_parts)))
+
+    # Compare each part
+    for i in range(max_length):
+        if v1_parts[i] < v2_parts[i]:
+            return -1
+        elif v1_parts[i] > v2_parts[i]:
+            return 1
+
+    return 0  # All parts are equal
 
 
 if __name__ == '__main__':
